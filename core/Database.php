@@ -16,7 +16,7 @@ class Database {
         $config = require '../config/config.php'; // Charger la configuration
 
         $this->host = $config['host'];
-        $this->dbname = $config['dbname'];
+        $this->dbname = $config['blog'];
         $this->user = $config['user'];
         $this->password = $config['password'];
 
