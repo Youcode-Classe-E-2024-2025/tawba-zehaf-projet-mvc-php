@@ -1,15 +1,18 @@
 <?php
 // Autoload des classes
-require '../vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 // Démarrer la session
-App\Core\Session::start();
+use App\core\Session;
+use App\core\Router;
+
+Session::start();
 
 // Initialiser le routeur
-$router = new App\Core\Router();
+$router = new Router();
 
 // Charger les routes
-require '../app/config/routes.php';
+require_once '../app/config/routes.php';
 $router->addRoute('GET', '/article/{id}', [ArticleController::class, 'show']);
 // Traiter la requête
 $router->dispatch($_SERVER['REQUEST_URI']);
