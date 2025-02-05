@@ -3,7 +3,7 @@
 require '../vendor/autoload.php';
 
 // Démarrer la session
-session_start();
+App\Core\Session::start();
 
 // Initialiser le routeur
 $router = new App\Core\Router();
