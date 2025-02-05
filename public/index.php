@@ -10,7 +10,7 @@ $router = new App\Core\Router();
 
 // Charger les routes
 require '../app/config/routes.php';
-
+$router->addRoute('GET', '/article/{id}', [ArticleController::class, 'show']);
 // Traiter la requête
 $router->dispatch($_SERVER['REQUEST_URI']);
 ?>
