@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Models;
@@ -23,5 +22,10 @@ class User {
         $stmt = $this->db->prepare("SELECT * FROM users WHERE id = ?");
         $stmt->execute([$id]);
         return $stmt->fetch();
+    }
+    public function findAll() {
+        // Logique pour récupérer tous les utilisateurs
+        $stmt = $this->db->query("SELECT * FROM users");
+        return $stmt->fetchAll();
     }
 }
